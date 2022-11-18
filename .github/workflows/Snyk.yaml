@@ -1,0 +1,29 @@
+name: Snyk Scan
+
+on:
+  pull_request:
+    branches:
+      - master
+      
+  push:
+    branches:
+      - master
+     
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: Snyk SCA Scanning
+        continue-on-error: true
+        run: |
+         echo "----------Download Latest Snyk CLI-----------"
+         curl -Lo ./snyk "https://github.com/snyk/snyk/releases/download/v1.1060.0/snyk-linux"
+         chmod +x snyk
+          ls -lrt
+          echo "----------Authenticating Snyk-----------"
+          ./snyk auth ${{secrets.Snyk_token}}
+         echo "----------Snyk Scanning-----------"  
+          ./snyk test --all-projects
+         echo "----------Snyk Monitor-----------"
+          ./snyk monitor --all-projects 
