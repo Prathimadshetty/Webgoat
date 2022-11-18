@@ -3,11 +3,11 @@ name: Snyk Scan
 on:
   pull_request:
     branches:
-      - master
+      - main
       
   push:
     branches:
-      - master
+      - main
      
 jobs:
   test:
