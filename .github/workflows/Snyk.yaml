@@ -27,3 +27,4 @@ jobs:
           ./snyk test --all-projects
          echo "----------Snyk Monitor-----------"
           ./snyk monitor --all-projects 
+          --json --json-file-output=snyk.json
