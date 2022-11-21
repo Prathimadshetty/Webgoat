@@ -26,10 +26,3 @@ jobs:
          echo "----------Snyk Scanning-----------"  
          echo "----------Snyk Monitor-----------"
           ./snyk monitor --all-projects 
-          args: --json --json-file-output=snyk.json
-          uniqueCount=$(jq -r '.uniqueCount' < snyk.json)
-          echo "uniqueCount=$uniqueCount" >> "$GITHUB_OUTPUT" 
-            dependencyCount=$(jq -r '.dependencyCount' < snyk.json)
-            echo "dependencyCount=$dependencyCount" >> "$GITHUB_OUTPUT" 
-             vulnerabilityCount=$(jq -r '.vulnerabilities' < snyk.json | jq length)
-            echo "vulnerabilityCount=$vulnerabilityCount" >> "$GITHUB_OUTPUT" 
