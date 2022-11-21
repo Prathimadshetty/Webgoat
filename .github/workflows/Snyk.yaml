@@ -21,7 +21,7 @@ jobs:
          curl -Lo ./snyk "https://github.com/snyk/snyk/releases/download/v1.1060.0/snyk-linux"
          chmod +x snyk
           ls -lrt
-          snykcount=$(curl -X GET --header 'Content-Type:application/json' --header 'Authorization token 66cc1ca1-202d-4058-89a7-4cb2ee9c5393' 'https://api.snyk.io/api/v1/org/b75daed6-3330-4723-b097-ed83f67917b4/project/0c204406-4008-493a-9ac9-67eaba4c332f')
+          snykcount=$(curl -X GET --header 'Content-Type: application/json' --header 'Authorization: token 66cc1ca1-202d-4058-89a7-4cb2ee9c5393' 'https://api.snyk.io/api/v1/org/b75daed6-3330-4723-b097-ed83f67917b4/project/0c204406-4008-493a-9ac9-67eaba4c332f')
           CRITICAL=$(echo "$snykcount" | jq .issueCountsBySeverity.critical )
           HIGH=$(echo "$snykcount" | jq .issueCountsBySeverity.high )
           MEDIUM=$(echo "$snykcount" | jq .issueCountsBySeverity.medium )
