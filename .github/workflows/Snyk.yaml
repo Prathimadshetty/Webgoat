@@ -32,15 +32,15 @@ jobs:
           echo "Low = $LOW"
           if [ $CRITICAL -gt 0 ]
           then 
-          echo "Failing task because there are critical vulnerabilities"
+          echo "Failing the task because there are critical vulnerabilities"
           exit 1
           elif [ $HIGH -gt 0 ]
           then 
-          echo "Failing task because there are high vulnerabilities"
+          echo "Failing the task because there are high vulnerabilities"
           exit 1
           elif [ $MEDIUM -gt 10 ]
           then 
-          echo "Failing task because number of medium issues are greater than 10"
+          echo "Failing the task because number of medium issues are greater than 10"
           exit 1
           else 
           echo "PASSED"
