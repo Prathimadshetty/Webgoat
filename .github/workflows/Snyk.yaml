@@ -32,7 +32,7 @@ jobs:
           echo "High = $HIGH"
           echo "Medium = $MEDIUM"
           echo "Low = $LOW"
-          if [ $CRITICAL -gt 0 ]
+          if [ $CRITICAL -gt 0 ] 
           then 
           echo "Failing the task because there are critical vulnerabilities"
           exit 1
