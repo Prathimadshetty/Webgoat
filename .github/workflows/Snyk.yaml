@@ -30,15 +30,15 @@ jobs:
           echo "High = $HIGH"
           echo "Medium = $MEDIUM"
           echo "Low = $LOW"
-          if [$CRITICAL -gt 5 ]
+          if [ $CRITICAL -gt 5 ]
           then 
           echo "Failing task because number of critical issues are greater than 5"
           exit 1
-          elif [$HIGH -gt 5 ]
+          elif [ $HIGH -gt 5 ]
           then 
           echo "Failing task because number of high issues are greater than 5"
           exit 1
-          elif [$MEDIUM -gt 5 ]
+          elif [ $MEDIUM -gt 5 ]
           then 
           echo "Failing task because number of medium issues are greater than 5"
           exit 1
