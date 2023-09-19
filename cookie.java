@@ -34,5 +34,4 @@ rules:
       - java
     fix: |
       $COOKIE.setHttpOnly(true);
-    pattern: |
-      $COOKIE.setHttpOnly(false);
+    $COOKIE.setHttpOnly(true);
